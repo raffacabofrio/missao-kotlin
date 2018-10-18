@@ -8,15 +8,27 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.TextView
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+
+
+        val dm = DataManager()
+        val adapterCourses = ArrayAdapter<CourseInfo>( this,
+                android.R.layout.simple_spinner_item,
+                dm.courses.values.toList()
+        )
+
+        adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spinnerCourses.adapter = adapterCourses
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
