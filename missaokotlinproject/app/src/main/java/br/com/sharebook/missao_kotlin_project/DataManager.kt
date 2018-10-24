@@ -1,11 +1,12 @@
 package br.com.sharebook.missao_kotlin_project
 
-class DataManager {
+object DataManager {
     val courses = HashMap<String, CourseInfo>()
     val notes = ArrayList<NoteInfo>()
 
     init{
         initializeCourses()
+        initializeNotes()
     }
 
     private fun initializeCourses() {
@@ -20,6 +21,10 @@ class DataManager {
 
         course = CourseInfo(courseId = "java_core", title = "Java Fundamentals: THE CORE")
         courses.set(course.courseId, course)
+    }
+
+    private fun initializeNotes(){
+
     }
 
 }
