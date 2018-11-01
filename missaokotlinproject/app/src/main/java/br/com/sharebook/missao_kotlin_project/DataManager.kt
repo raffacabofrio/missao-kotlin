@@ -24,7 +24,15 @@ object DataManager {
     }
 
     private fun initializeNotes(){
+        var course = CourseInfo("android_intents", "android Programming with intents")
+        var note = NoteInfo(course, "note 1", "note 1")
+        notes.add(note)
 
+        note = NoteInfo(course, "note 2", "note 2")
+        notes.add(note)
+
+        note = NoteInfo(course, "note 3", "note 3")
+        notes.add(note)
     }
 
 }
