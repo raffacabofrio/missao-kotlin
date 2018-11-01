@@ -16,12 +16,20 @@ class NoteListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_note_list)
         setSupportActionBar(toolbar)
 
+        // new note
         fab.setOnClickListener { view ->
             val activityIntent = Intent(this, MainActivity::class.java)
             startActivity(activityIntent)
         }
 
         listNotes.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, DataManager.notes)
+
+        //add note
+        listNotes.setOnItemClickListener{parent, view, position, id ->
+            val activityIntent = Intent(this, MainActivity::class.java)
+            activityIntent.putExtra(EXTRA_NOTE_POSITION, position)
+            startActivity(activityIntent)
+        }
     }
 
 }

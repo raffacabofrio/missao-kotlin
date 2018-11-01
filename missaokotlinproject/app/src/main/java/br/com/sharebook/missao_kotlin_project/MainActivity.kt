@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var notePosition = POSITION_NOT_SET
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +30,21 @@ class MainActivity : AppCompatActivity() {
 
         spinnerCourses.adapter = adapterCourses
 
+        notePosition= intent.getIntExtra(EXTRA_NOTE_POSITION, POSITION_NOT_SET)
+
+        if(notePosition != POSITION_NOT_SET){
+            displayNote()
+        }
+
+    }
+
+    private fun displayNote() {
+        val note = DataManager.notes[notePosition]
+        textNoteTitle.setText(note.title)
+        textNoteText.setText(note.text)
+
+        val coursePosition = DataManager.courses.values.indexOf(note.course)
+        spinnerCourses.setSelection(coursePosition)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
