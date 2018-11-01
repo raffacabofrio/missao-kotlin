@@ -24,14 +24,24 @@ object DataManager {
     }
 
     private fun initializeNotes(){
-        var course = CourseInfo("android_intents", "android Programming with intents")
-        var note = NoteInfo(course, "note 1", "note 1")
+        var course = courses["android_intents"] as CourseInfo
+
+        var note = NoteInfo( course, "note a1", "note a1 text")
         notes.add(note)
 
-        note = NoteInfo(course, "note 2", "note 2")
+        note = NoteInfo(course, "note a2", "note a2 text")
         notes.add(note)
 
-        note = NoteInfo(course, "note 3", "note 3")
+        note = NoteInfo(course, "note a3", "note a3 text")
+        notes.add(note)
+
+
+        course = courses["java_lang"] as CourseInfo
+
+        note = NoteInfo(course, "java 1", "java 1 text")
+        notes.add(note)
+
+        note = NoteInfo(course, "java 2", "java 2 text")
         notes.add(note)
     }
 
