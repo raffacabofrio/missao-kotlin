@@ -61,9 +61,19 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 
 
-        return if (id == R.id.action_settings) {
-            true
-        } else super.onOptionsItemSelected(item)
+        return when (id) {
+            R.id.action_settings -> true
+            R.id.action_next     -> {
+                moveNext()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
 
+    }
+
+    private fun moveNext() {
+        notePosition++
+        displayNote()
     }
 }
