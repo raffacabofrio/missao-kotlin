@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.com.sharebook.missao_kotlin_project.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_next"
         android:orderInCategory="100"
+        android:title="Next" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
         android:title="@string/action_settings"
         app:showAsAction="never" />
 </menu>
