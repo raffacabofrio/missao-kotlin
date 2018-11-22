@@ -4,8 +4,10 @@
     tools:context="br.com.sharebook.missao_kotlin_project.MainActivity">
     <item
         android:id="@+id/action_next"
+        android:icon="@drawable/ic_forward_white_24dp"
         android:orderInCategory="100"
-        android:title="Next" />
+        android:title="Next"
+        app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="101"
